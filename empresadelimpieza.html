@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presupuesto de Limpieza Gratis | [Nombre de la Empresa]</title>
+
+<!-- META PIXEL — substitua pelo pixel do cliente -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)
+};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','SEU_PIXEL_AQUI');
+fbq('track','PageView');
+</script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+--green:#059669;
+--green-dark:#047857;
+--green-light:#ECFDF5;
+--navy:#0F1F3D;
+--navy2:#1A3050;
+--white:#ffffff;
+--gray:#667085;
+--light:#F8FAFC;
+--border:#E2E8F0;
+--accent:#10B981;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#fff;
+color:var(--navy);
+}
+
+/* ================================
+HERO
+================================ */
+.hero{
+min-height:100vh;
+background:linear-gradient(115deg,#071a2c 0%,#0c2b45 62%,#0a3d2e 100%);
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero:after{
+content:"";
+position:absolute;
+width:600px;height:600px;
+border-radius:50%;
+background:rgba(5,150,105,.13);
+right:-200px;top:-180px;
+}
+
+.container{
+width:100%;max-width:1150px;
+margin:auto;padding:70px 25px;
+position:relative;z-index:2;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:70px;align-items:center;
+}
+
+.location{
+display:inline-flex;align-items:center;gap:7px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.13);
+color:#fff;padding:9px 14px;
+border-radius:100px;font-size:13px;font-weight:700;
+margin-bottom:25px;
+}
+
+.hero h1{
+color:#fff;
+font-size:clamp(38px,6vw,64px);
+line-height:1;letter-spacing:-2px;max-width:680px;
+}
+
+.hero h1 span{color:var(--accent);}
+
+.hero-sub{
+font-size:18px;line-height:1.6;
+color:#cbd5df;max-width:610px;margin-top:24px;
+}
+
+.hero-sub strong{color:#fff;}
+
+.features{
+display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;
+}
+
+.feature{
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.12);
+padding:11px 14px;border-radius:10px;
+color:#fff;font-size:13px;font-weight:700;
+}
+
+.cta{
+margin-top:32px;border:0;
+background:var(--green);color:#fff;
+padding:18px 27px;border-radius:12px;
+font-size:16px;font-weight:900;cursor:pointer;
+box-shadow:0 12px 35px rgba(5,150,105,.3);
+display:block;
+}
+
+.cta:hover{background:var(--green-dark);}
+
+.micro{color:#9fb0bf;font-size:12px;margin-top:12px;}
+
+/* CARD LATERAL */
+.sim-card{
+background:#fff;padding:30px;
+border-radius:22px;
+box-shadow:0 25px 60px rgba(0,0,0,.24);
+}
+
+.icon-box{
+width:55px;height:55px;
+display:flex;align-items:center;justify-content:center;
+border-radius:15px;background:var(--green-light);
+font-size:27px;margin-bottom:20px;
+}
+
+.sim-card h2{font-size:26px;line-height:1.1;margin-bottom:12px;}
+
+.sim-card p{color:var(--gray);line-height:1.5;font-size:14px;}
+
+.price-box{
+background:#f6f8fa;padding:20px;
+border-radius:14px;margin-top:22px;
+}
+
+.price-label{
+font-size:12px;color:var(--gray);
+font-weight:700;text-transform:uppercase;
+}
+
+.price-main{
+font-size:22px;font-weight:900;
+margin-top:5px;color:var(--green);
+}
+
+.finance{
+margin-top:16px;padding:15px;
+background:var(--green-light);color:#065F46;
+border-radius:12px;font-weight:700;font-size:13px;
+}
+
+/* ================================
+FORMULÁRIO
+================================ */
+.form-page{
+display:none;min-height:100vh;
+background:#f5f7f9;padding:35px 18px;
+}
+
+.form-shell{max-width:780px;margin:auto;}
+
+.form-brand{
+display:flex;align-items:center;gap:10px;
+font-weight:900;font-size:17px;margin-bottom:30px;
+}
+
+.brand-icon{
+width:36px;height:36px;
+display:grid;place-items:center;
+background:var(--green);border-radius:10px;color:#fff;font-size:18px;
+}
+
+.progress-top{
+display:flex;justify-content:space-between;
+font-size:12px;font-weight:700;color:#667085;margin-bottom:9px;
+}
+
+.progress{
+height:7px;background:#e3e7ec;
+border-radius:20px;overflow:hidden;margin-bottom:22px;
+}
+
+.progress-bar{
+height:100%;width:10%;
+background:var(--green);transition:.3s;
+}
+
+.question-card{
+background:#fff;border-radius:22px;
+padding:42px;
+box-shadow:0 10px 35px rgba(16,24,40,.07);
+}
+
+.tag{
+color:#065F46;font-size:12px;font-weight:900;
+text-transform:uppercase;letter-spacing:1px;margin-bottom:13px;
+}
+
+.question-card h2{
+font-size:clamp(26px,5vw,38px);
+line-height:1.08;letter-spacing:-1px;
+}
+
+.description{
+color:#667085;font-size:17px;line-height:1.55;
+margin-top:14px;margin-bottom:27px;
+}
+
+.input{
+width:100%;border:2px solid #e1e5ea;
+padding:19px 18px;border-radius:12px;
+outline:none;font-size:17px;
+}
+
+.input:focus{border-color:var(--green);}
+
+textarea.input{min-height:110px;resize:vertical;}
+
+.options{display:grid;gap:10px;}
+
+.option{
+border:2px solid #e5e8ec;background:#fff;
+padding:19px 18px;border-radius:12px;
+text-align:left;font-weight:700;font-size:16px;
+line-height:1.4;color:#344054;cursor:pointer;
+}
+
+.option:hover{border-color:#6EE7B7;background:#F0FDF4;}
+
+.option.selected{
+border-color:var(--green);background:var(--green-light);color:#065F46;
+}
+
+.buttons{display:flex;margin-top:28px;gap:10px;}
+
+.back{
+border:0;background:#eef0f3;padding:16px 21px;
+border-radius:11px;font-size:15px;font-weight:700;cursor:pointer;
+}
+
+.next{
+margin-left:auto;border:0;
+background:var(--navy);color:#fff;
+padding:17px 25px;border-radius:11px;
+font-size:16px;font-weight:800;cursor:pointer;
+}
+
+.error{
+display:none;margin-top:15px;padding:11px 13px;
+background:#fff1f0;color:#b42318;
+border-radius:9px;font-size:13px;
+}
+
+/* FINAL */
+.done{display:none;text-align:center;padding:25px 0;}
+
+.done-icon{
+width:75px;height:75px;
+display:grid;place-items:center;
+background:var(--green-light);color:var(--green);
+border-radius:50%;font-size:36px;font-weight:900;
+margin:0 auto 22px;
+}
+
+.done h2{font-size:36px;}
+
+.done p{
+color:#667085;margin:15px auto 0;
+max-width:520px;line-height:1.5;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+.hero{min-height:auto;}
+.container{padding:45px 20px;}
+.hero-grid{grid-template-columns:1fr;gap:35px;}
+.hero h1{font-size:40px;}
+.sim-card{padding:23px;}
+.question-card{padding:30px 20px;}
+.form-page{padding:22px 12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ==========================
+HERO
+========================== -->
+<section class="hero" id="hero">
+<div class="container">
+<div class="hero-grid">
+
+<div>
+<h1>
+Tu hogar limpio,
+<span>sin preocupaciones y sin perder tiempo.</span>
+</h1>
+
+<p class="hero-sub">
+Pide tu presupuesto gratis en menos de 2 minutos y recibe una respuesta hoy mismo.
+<strong>Servicio profesional de limpieza en español.</strong>
+</p>
+
+<div class="features">
+<div class="feature">✓ Presupuesto sin compromiso</div>
+<div class="feature">✓ Atención en español</div>
+<div class="feature">✓ Respuesta el mismo día</div>
+</div>
+
+<button class="cta" id="start">
+PEDIR MI PRESUPUESTO GRATIS →
+</button>
+
+<div class="micro">
+Sin compromiso · Solo toma 2 minutos
+</div>
+</div>
+
+<div class="sim-card">
+<div class="icon-box">🧹</div>
+<h2>Limpieza profesional para tu hogar o negocio</h2>
+<p>Cuéntanos sobre tu espacio y necesidades. Te llamamos hoy mismo con el mejor precio.</p>
+
+<div class="price-box">
+<div class="price-label">Presupuesto</div>
+<div class="price-main">Gratis y sin compromiso</div>
+</div>
+
+<div class="finance">
+✅ Respondemos en menos de 5 minutos por SMS o llamada.
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ==========================
+FORM
+========================== -->
+<section class="form-page" id="formPage">
+<div class="form-shell">
+
+<div class="form-brand">
+<div class="brand-icon">🧹</div>
+[NOMBRE DE LA EMPRESA]
+</div>
+
+<div class="progress-top">
+<span id="stepText"></span>
+<span id="percentText"></span>
+</div>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="question-card">
+<div id="questionArea"></div>
+<div class="error" id="error"></div>
+
+<div class="buttons">
+<button class="back" id="back" type="button">← Atrás</button>
+<button class="next" id="next" type="button">Continuar →</button>
+</div>
+
+<div class="done" id="done">
+<div class="done-icon">✓</div>
+<h2>¡Solicitud enviada!</h2>
+<p>Recibimos tu información. Nuestro equipo te contactará en los próximos minutos al número que nos diste.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<script>
+
+/* ================================
+CONFIG — substitua pelo webhook do n8n do cliente
+================================ */
+const WEBHOOK = 'https://SEU_N8N/webhook/cleaning-lead';
+
+const urlParams = new URLSearchParams(window.location.search);
+let data = {};
+let step = 0;
+
+/* PIXEL */
+function customEvent(name, params={}){
+if(typeof fbq === 'function') fbq('trackCustom', name, params);
+}
+
+/* ================================
+PERGUNTAS
+================================ */
+const questions = [
+
+{
+key:'tipo_servicio',
+title:'¿Qué tipo de servicio necesitas?',
+description:'Selecciona la opción que mejor describe lo que buscas.',
+type:'options',
+options:[
+'🏠 Limpieza residencial (casa o apartamento)',
+'🏢 Limpieza comercial (oficina o local)',
+'🔨 Limpieza post-construcción o mudanza',
+'✨ Limpieza profunda (deep cleaning)'
+]
+},
+
+{
+key:'frecuencia',
+title:'¿Con qué frecuencia necesitas el servicio?',
+description:'Esto nos ayuda a darte el mejor precio.',
+type:'options',
+options:[
+'Una sola vez',
+'Cada semana',
+'Cada dos semanas',
+'Una vez al mes',
+'Todavía no lo sé'
+]
+},
+
+{
+key:'bedrooms',
+title:'¿Cuántos cuartos tiene tu propiedad?',
+description:'Para casas o apartamentos. Si es una oficina, elige el más cercano.',
+type:'options',
+options:[
+'1 cuarto (studio o 1 bed)',
+'2 cuartos',
+'3 cuartos',
+'4 cuartos',
+'5 o más cuartos'
+],
+condition:()=> data.tipo_servicio !== '🏢 Limpieza comercial (oficina o local)'
+},
+
+{
+key:'tamano_oficina',
+title:'¿Qué tan grande es el espacio comercial?',
+description:'Una estimación es suficiente.',
+type:'options',
+options:[
+'Pequeño (menos de 500 sq ft)',
+'Mediano (500–1,500 sq ft)',
+'Grande (1,500–3,000 sq ft)',
+'Muy grande (más de 3,000 sq ft)'
+],
+condition:()=> data.tipo_servicio === '🏢 Limpieza comercial (oficina o local)'
+},
+
+{
+key:'bathrooms',
+title:'¿Cuántos baños?',
+type:'options',
+options:['1 baño','2 baños','3 baños','4 o más baños'],
+condition:()=> data.tipo_servicio !== '🏢 Limpieza comercial (oficina o local)'
+},
+
+{
+key:'cuando',
+title:'¿Cuándo necesitas el servicio?',
+type:'options',
+options:[
+'Lo antes posible',
+'Esta semana',
+'La próxima semana',
+'Este mes',
+'Solo estoy cotizando'
+]
+},
+
+{
+key:'phone',
+title:'¿Cuál es tu número de teléfono?',
+description:'Te llamaremos o enviaremos un SMS con tu presupuesto.',
+type:'input',
+inputType:'tel',
+placeholder:'(407) 000-0000'
+},
+
+{
+key:'phone_confirm',
+title:'Confirma tu número de teléfono',
+description:'Esto evita que perdamos tu presupuesto por un número incorrecto.',
+type:'input',
+inputType:'tel',
+placeholder:'(407) 000-0000'
+},
+
+{
+key:'name',
+title:'¿Cómo te llamamos?',
+description:'Solo tu nombre o como prefieras que te contactemos.',
+type:'input',
+inputType:'text',
+placeholder:'Tu nombre'
+},
+
+{
+key:'notas',
+title:'¿Algún detalle adicional? (opcional)',
+description:'Mascotas en casa, necesidades especiales, acceso al inmueble, etc.',
+type:'textarea',
+placeholder:'Ej: Tengo 2 perros, necesito que usen productos sin aroma...'
+}
+
+];
+
+/* ELEMENTOS */
+const hero = document.getElementById('hero');
+const formPage = document.getElementById('formPage');
+const questionArea = document.getElementById('questionArea');
+const error = document.getElementById('error');
+const next = document.getElementById('next');
+const back = document.getElementById('back');
+
+/* VISIBLE */
+function visibleQuestions(){
+return questions.filter(q => !q.condition || q.condition());
+}
+
+/* PHONE CLEAN */
+function phone(value){
+return String(value||'').replace(/\D/g,'');
+}
+
+/* PAYLOAD */
+function makePayload(status){
+return {
+status,
+name: data.name || '',
+phone: phone(data.phone),
+tipo_servicio: data.tipo_servicio || '',
+frecuencia: data.frecuencia || '',
+bedrooms: data.bedrooms || '',
+tamano_oficina: data.tamano_oficina || '',
+bathrooms: data.bathrooms || '',
+cuando: data.cuando || '',
+notas: data.notas || '',
+utm_source: urlParams.get('utm_source') || '',
+utm_medium: urlParams.get('utm_medium') || '',
+utm_campaign: urlParams.get('utm_campaign') || '',
+utm_content: urlParams.get('utm_content') || '',
+utm_term: urlParams.get('utm_term') || ''
+};
+}
+
+/* WEBHOOK */
+async function sendLead(status){
+const response = await fetch(WEBHOOK,{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(makePayload(status))
+});
+if(!response.ok) throw new Error('Erro ao salvar');
+}
+
+/* START */
+document.getElementById('start').addEventListener('click',()=>{
+hero.style.display='none';
+formPage.style.display='block';
+customEvent('FormularioIniciado');
+window.scrollTo(0,0);
+render();
+});
+
+/* RENDER */
+function render(){
+const list = visibleQuestions();
+const current = list[step];
+
+document.getElementById('stepText').textContent = `Paso ${step+1} de ${list.length}`;
+const percent = Math.round(((step+1)/list.length)*100);
+document.getElementById('percentText').textContent = percent+'%';
+document.getElementById('progressBar').style.width = percent+'%';
+back.style.visibility = step===0 ? 'hidden' : 'visible';
+next.style.display = 'block';
+error.style.display = 'none';
+
+let html = `
+<div class="tag">TU PRESUPUESTO</div>
+<h2>${current.title}</h2>
+${current.description ? `<p class="description">${current.description}</p>` : `<p class="description">Completa para continuar.</p>`}
+`;
+
+if(current.type==='input'){
+html += `<input id="answer" class="input" type="${current.inputType}" placeholder="${current.placeholder}" value="${data[current.key]||''}">`;
+}
+
+if(current.type==='textarea'){
+html += `<textarea id="answer" class="input" placeholder="${current.placeholder}">${data[current.key]||''}</textarea>`;
+}
+
+if(current.type==='options'){
+html += `<div class="options">`;
+current.options.forEach(option=>{
+html += `<button type="button" class="option ${data[current.key]===option?'selected':''}" data-value="${option}">${option}</button>`;
+});
+html += `</div>`;
+}
+
+questionArea.innerHTML = html;
+
+document.querySelectorAll('[data-value]').forEach(button=>{
+button.onclick=()=>{
+data[current.key] = button.dataset.value;
+document.querySelectorAll('[data-value]').forEach(b=>b.classList.remove('selected'));
+button.classList.add('selected');
+};
+});
+
+next.textContent = step===list.length-1 ? 'PEDIR MI PRESUPUESTO →' : 'Continuar →';
+}
+
+/* SAVE */
+function save(){
+const list = visibleQuestions();
+const current = list[step];
+
+if(current.type==='input'){
+const value = document.getElementById('answer').value.trim();
+if(!value) return false;
+data[current.key] = value;
+}
+
+if(current.type==='textarea'){
+const value = document.getElementById('answer').value.trim();
+data[current.key] = value; // opcional
+return true;
+}
+
+if(current.type==='options'){
+if(!data[current.key]) return false;
+}
+
+return true;
+}
+
+/* NEXT */
+next.onclick = async ()=>{
+
+if(!save()){
+error.innerText = 'Por favor, completa este paso para continuar.';
+error.style.display = 'block';
+return;
+}
+
+let list = visibleQuestions();
+const current = list[step];
+
+/* CONFIRMA TELEFONE */
+if(current.key==='phone_confirm'){
+if(phone(data.phone)!==phone(data.phone_confirm)){
+error.innerText = 'Los números no coinciden. Verifica e intenta de nuevo.';
+error.style.display = 'block';
+return;
+}
+}
+
+/* SALVA LEAD PARCIAL no nome */
+if(current.key==='name'){
+next.disabled=true;
+next.innerText='Guardando...';
+try{
+await sendLead('lead_capturado');
+if(typeof fbq==='function') fbq('track','Lead');
+customEvent('LeadCapturado');
+}catch(e){
+console.error(e);
+error.innerText='No pudimos guardar. Intenta de nuevo.';
+error.style.display='block';
+next.disabled=false;
+next.innerText='Continuar →';
+return;
+}
+next.disabled=false;
+}
+
+list = visibleQuestions();
+const last = step===list.length-1;
+
+if(!last){step++;render();return;}
+
+/* FINAL */
+next.disabled=true;
+next.innerText='ENVIANDO...';
+
+try{
+await sendLead('presupuesto_completado');
+customEvent('PresupuestoCompletado');
+
+questionArea.style.display='none';
+error.style.display='none';
+back.style.display='none';
+next.style.display='none';
+document.getElementById('done').style.display='block';
+document.getElementById('stepText').textContent='Completado';
+document.getElementById('percentText').textContent='100%';
+document.getElementById('progressBar').style.width='100%';
+
+}catch(e){
+console.error(e);
+error.innerText='No pudimos enviar tu solicitud. Intenta de nuevo.';
+error.style.display='block';
+next.disabled=false;
+next.innerText='PEDIR MI PRESUPUESTO →';
+}
+
+};
+
+/* BACK */
+back.onclick=()=>{if(step>0){step--;render();}};
+
+</script>
+</body>
+</html>
