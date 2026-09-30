@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Tienes una empresa de limpieza?</title>
+
+<!-- META PIXEL — substitua pelo seu pixel -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)
+};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','SEU_PIXEL_AQUI');
+fbq('track','PageView');
+</script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+--green:#059669;
+--green-dark:#047857;
+--green-light:#ECFDF5;
+--navy:#0F1F3D;
+--white:#ffffff;
+--gray:#667085;
+--border:#E2E8F0;
+--accent:#10B981;
+}
+
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--navy);}
+
+.hero{
+min-height:100vh;
+background:linear-gradient(115deg,#071a2c 0%,#0c2b45 62%,#0a3d2e 100%);
+display:flex;align-items:center;
+position:relative;overflow:hidden;
+}
+
+.hero:after{
+content:"";position:absolute;
+width:600px;height:600px;border-radius:50%;
+background:rgba(5,150,105,.13);
+right:-200px;top:-180px;
+}
+
+.container{
+width:100%;max-width:1150px;
+margin:auto;padding:70px 25px;
+position:relative;z-index:2;
+}
+
+.hero-grid{
+display:grid;grid-template-columns:1.1fr .9fr;
+gap:70px;align-items:center;
+}
+
+.hero h1{
+color:#fff;
+font-size:clamp(38px,6vw,62px);
+line-height:1.05;letter-spacing:-2px;max-width:680px;
+}
+
+.hero h1 span{color:var(--accent);}
+
+.hero-sub{
+font-size:18px;line-height:1.6;
+color:#cbd5df;max-width:610px;margin-top:24px;
+}
+
+.hero-sub strong{color:#fff;}
+
+.features{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+
+.feature{
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.12);
+padding:11px 14px;border-radius:10px;
+color:#fff;font-size:13px;font-weight:700;
+}
+
+.cta{
+margin-top:32px;border:0;
+background:var(--green);color:#fff;
+padding:18px 27px;border-radius:12px;
+font-size:16px;font-weight:900;cursor:pointer;
+box-shadow:0 12px 35px rgba(5,150,105,.3);
+display:block;
+}
+
+.cta:hover{background:var(--green-dark);}
+
+.micro{color:#9fb0bf;font-size:12px;margin-top:12px;}
+
+.sim-card{
+background:#fff;padding:30px;
+border-radius:22px;
+box-shadow:0 25px 60px rgba(0,0,0,.24);
+}
+
+.icon-box{
+width:55px;height:55px;
+display:flex;align-items:center;justify-content:center;
+border-radius:15px;background:var(--green-light);
+font-size:27px;margin-bottom:20px;
+}
+
+.sim-card h2{font-size:24px;line-height:1.2;margin-bottom:12px;}
+.sim-card p{color:var(--gray);line-height:1.5;font-size:14px;}
+
+.proof{
+margin-top:20px;display:flex;flex-direction:column;gap:10px;
+}
+
+.proof-item{
+display:flex;align-items:flex-start;gap:10px;
+padding:12px 14px;
+background:#f8fafc;border-radius:10px;
+font-size:13px;color:#344054;font-weight:600;
+}
+
+.proof-icon{font-size:16px;flex-shrink:0;}
+
+.finance{
+margin-top:16px;padding:15px;
+background:var(--green-light);color:#065F46;
+border-radius:12px;font-weight:700;font-size:13px;
+}
+
+/* FORM */
+.form-page{
+display:none;min-height:100vh;
+background:#f5f7f9;padding:35px 18px;
+}
+
+.form-shell{max-width:780px;margin:auto;}
+
+.form-brand{
+display:flex;align-items:center;gap:10px;
+font-weight:900;font-size:17px;margin-bottom:30px;
+}
+
+.brand-icon{
+width:36px;height:36px;
+display:grid;place-items:center;
+background:var(--green);border-radius:10px;
+color:#fff;font-size:18px;
+}
+
+.progress-top{
+display:flex;justify-content:space-between;
+font-size:12px;font-weight:700;color:#667085;margin-bottom:9px;
+}
+
+.progress{
+height:7px;background:#e3e7ec;
+border-radius:20px;overflow:hidden;margin-bottom:22px;
+}
+
+.progress-bar{
+height:100%;width:10%;
+background:var(--green);transition:.3s;
+}
+
+.question-card{
+background:#fff;border-radius:22px;padding:42px;
+box-shadow:0 10px 35px rgba(16,24,40,.07);
+}
+
+.tag{
+color:#065F46;font-size:12px;font-weight:900;
+text-transform:uppercase;letter-spacing:1px;margin-bottom:13px;
+}
+
+.question-card h2{
+font-size:clamp(26px,5vw,38px);
+line-height:1.08;letter-spacing:-1px;
+}
+
+.description{
+color:#667085;font-size:17px;line-height:1.55;
+margin-top:14px;margin-bottom:27px;
+}
+
+.input{
+width:100%;border:2px solid #e1e5ea;
+padding:19px 18px;border-radius:12px;
+outline:none;font-size:17px;
+}
+
+.input:focus{border-color:var(--green);}
+
+.options{display:grid;gap:10px;}
+
+.option{
+border:2px solid #e5e8ec;background:#fff;
+padding:19px 18px;border-radius:12px;
+text-align:left;font-weight:700;font-size:16px;
+line-height:1.4;color:#344054;cursor:pointer;
+}
+
+.option:hover{border-color:#6EE7B7;background:#F0FDF4;}
+.option.selected{border-color:var(--green);background:var(--green-light);color:#065F46;}
+
+.buttons{display:flex;margin-top:28px;gap:10px;}
+
+.back{
+border:0;background:#eef0f3;padding:16px 21px;
+border-radius:11px;font-size:15px;font-weight:700;cursor:pointer;
+}
+
+.next{
+margin-left:auto;border:0;
+background:var(--navy);color:#fff;
+padding:17px 25px;border-radius:11px;
+font-size:16px;font-weight:800;cursor:pointer;
+}
+
+.error{
+display:none;margin-top:15px;padding:11px 13px;
+background:#fff1f0;color:#b42318;
+border-radius:9px;font-size:13px;
+}
+
+.done{display:none;text-align:center;padding:25px 0;}
+
+.done-icon{
+width:75px;height:75px;
+display:grid;place-items:center;
+background:var(--green-light);color:var(--green);
+border-radius:50%;font-size:36px;font-weight:900;
+margin:0 auto 22px;
+}
+
+.done h2{font-size:36px;}
+.done p{color:#667085;margin:15px auto 0;max-width:520px;line-height:1.5;}
+
+@media(max-width:800px){
+.hero{min-height:auto;}
+.container{padding:45px 20px;}
+.hero-grid{grid-template-columns:1fr;gap:35px;}
+.hero h1{font-size:40px;}
+.sim-card{padding:23px;}
+.question-card{padding:30px 20px;}
+.form-page{padding:22px 12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="container">
+<div class="hero-grid">
+
+<div>
+<h1>
+¿Tienes una empresa de limpieza
+<span>y quieres más clientes todos los meses?</span>
+</h1>
+
+<p class="hero-sub">
+Trabajamos con empresas de limpieza para que consigan clientes nuevos todos los meses —
+<strong>sin depender de recomendaciones.</strong>
+</p>
+
+<div class="features">
+<div class="feature">✓ Clientes nuevos todos los meses</div>
+<div class="feature">✓ Sin depender de recomendaciones</div>
+<div class="feature">✓ Resultados en 30 días</div>
+</div>
+
+<button class="cta" id="start">
+QUIERO MÁS CLIENTES →
+</button>
+
+<div class="micro">Evaluación gratis · Solo toma 2 minutos</div>
+</div>
+
+<div class="sim-card">
+<div class="icon-box">📈</div>
+<h2>Así ayudamos a empresas como la tuya</h2>
+<p>Empresas de limpieza que antes vivían de recomendaciones, ahora tienen clientes nuevos todos los meses.</p>
+
+<div class="proof">
+<div class="proof-item">
+<span class="proof-icon">✅</span>
+<span>Clientes nuevos todos los meses, de forma previsible</span>
+</div>
+<div class="proof-item">
+<span class="proof-icon">✅</span>
+<span>Sin depender de recomendaciones o grupos de Facebook</span>
+</div>
+<div class="proof-item">
+<span class="proof-icon">✅</span>
+<span>Resultado en 30 días o menos</span>
+</div>
+</div>
+
+<div class="finance">
+🚀 Evaluación gratuita — cupos limitados.
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FORM -->
+<section class="form-page" id="formPage">
+<div class="form-shell">
+
+<div class="form-brand">
+<div class="brand-icon">📈</div>
+[SUA AGÊNCIA]
+</div>
+
+<div class="progress-top">
+<span id="stepText"></span>
+<span id="percentText"></span>
+</div>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="question-card">
+<div id="questionArea"></div>
+<div class="error" id="error"></div>
+
+<div class="buttons">
+<button class="back" id="back" type="button">← Atrás</button>
+<button class="next" id="next" type="button">Continuar →</button>
+</div>
+
+<div class="done" id="done">
+<div class="done-icon">✓</div>
+<h2>¡Solicitud recibida!</h2>
+<p>Recibimos tu información. Nuestro equipo te contactará en breve para hablar sobre cómo podemos ayudarte a conseguir más clientes.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<script>
+
+/* ================================
+CONFIG — substitua pelo seu webhook n8n
+================================ */
+const WEBHOOK = 'https://SEU_N8N/webhook/agencia-lead';
+
+const urlParams = new URLSearchParams(window.location.search);
+let data = {};
+let step = 0;
+
+function customEvent(name, params={}){
+if(typeof fbq==='function') fbq('trackCustom', name, params);
+}
+
+/* PERGUNTAS */
+const questions = [
+
+{
+key:'tiempo_empresa',
+title:'¿Cuánto tiempo llevas con tu empresa de limpieza?',
+description:'Queremos entender el momento actual de tu negocio.',
+type:'options',
+options:[
+'Menos de 1 año',
+'Entre 1 y 3 años',
+'Entre 3 y 5 años',
+'Más de 5 años'
+]
+},
+
+{
+key:'empleados',
+title:'¿Cuántos empleados tienes hoy?',
+type:'options',
+options:[
+'Solo yo (1 persona)',
+'2 a 5 empleados',
+'6 a 10 empleados',
+'Más de 10 empleados'
+]
+},
+
+{
+key:'llc_seguro',
+title:'¿Tu empresa tiene LLC activa y seguro de responsabilidad civil (general liability)?',
+description:'Esto nos permite verificar si podemos trabajar juntos.',
+type:'options',
+options:[
+'Sí, tengo los dos',
+'Tengo LLC pero no el seguro',
+'Todavía no, pero puedo obtenerlos',
+'No lo sé'
+]
+},
+
+{
+key:'captacion',
+title:'¿Cómo consigues clientes hoy?',
+description:'Puedes seleccionar la opción más parecida a tu situación.',
+type:'options',
+options:[
+'Solo por recomendación (boca a boca)',
+'Grupos de Facebook o redes sociales',
+'Ya intenté algo de marketing pero no funcionó',
+'Tengo clientes fijos pero quiero crecer',
+]
+},
+
+{
+key:'inversion_marketing',
+title:'¿Cuánto inviertes en marketing hoy?',
+type:'options',
+options:[
+'Nada, no invierto',
+'Menos de US$ 200/mes',
+'Entre US$ 200 y US$ 500/mes',
+'Más de US$ 500/mes'
+]
+},
+
+{
+key:'facturacion',
+title:'¿Cuánto factura tu empresa al mes, aproximadamente?',
+description:'Esta información es confidencial y nos ayuda a darte la propuesta correcta.',
+type:'options',
+options:[
+'Menos de US$ 3.000/mes',
+'Entre US$ 3.000 y US$ 8.000/mes',
+'Entre US$ 8.000 y US$ 20.000/mes',
+'Más de US$ 20.000/mes'
+]
+},
+
+{
+key:'estado',
+title:'¿En qué estado opera tu empresa?',
+type:'options',
+options:[
+'Florida (FL)',
+'Massachusetts (MA)',
+'Texas (TX)',
+'New Jersey (NJ)',
+'Georgia (GA)',
+'Otro estado'
+]
+},
+
+{
+key:'phone',
+title:'¿Cuál es tu número de teléfono?',
+description:'Te llamamos o enviamos un mensaje para agendar tu evaluación gratuita.',
+type:'input',
+inputType:'tel',
+placeholder:'(407) 000-0000'
+},
+
+{
+key:'phone_confirm',
+title:'Confirma tu número de teléfono',
+description:'Verificamos el número para no perder tu contacto.',
+type:'input',
+inputType:'tel',
+placeholder:'(407) 000-0000'
+},
+
+{
+key:'name',
+title:'¿Cómo te llamas?',
+type:'input',
+inputType:'text',
+placeholder:'Tu nombre'
+}
+
+];
+
+/* ELEMENTOS */
+const hero = document.getElementById('hero');
+const formPage = document.getElementById('formPage');
+const questionArea = document.getElementById('questionArea');
+const error = document.getElementById('error');
+const next = document.getElementById('next');
+const back = document.getElementById('back');
+
+function visibleQuestions(){
+return questions.filter(q=>!q.condition||q.condition());
+}
+
+function phone(value){
+return String(value||'').replace(/\D/g,'');
+}
+
+function makePayload(status){
+return {
+status,
+name: data.name||'',
+phone: phone(data.phone),
+estado: data.estado||'',
+tiempo_empresa: data.tiempo_empresa||'',
+empleados: data.empleados||'',
+llc_seguro: data.llc_seguro||'',
+captacion: data.captacion||'',
+inversion_marketing: data.inversion_marketing||'',
+facturacion: data.facturacion||'',
+utm_source: urlParams.get('utm_source')||'',
+utm_medium: urlParams.get('utm_medium')||'',
+utm_campaign: urlParams.get('utm_campaign')||'',
+utm_content: urlParams.get('utm_content')||'',
+utm_term: urlParams.get('utm_term')||''
+};
+}
+
+async function sendLead(status){
+const r = await fetch(WEBHOOK,{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(makePayload(status))
+});
+if(!r.ok) throw new Error('Erro');
+}
+
+document.getElementById('start').addEventListener('click',()=>{
+hero.style.display='none';
+formPage.style.display='block';
+customEvent('FormularioIniciado');
+window.scrollTo(0,0);
+render();
+});
+
+function render(){
+const list = visibleQuestions();
+const current = list[step];
+
+document.getElementById('stepText').textContent=`Paso ${step+1} de ${list.length}`;
+const pct=Math.round(((step+1)/list.length)*100);
+document.getElementById('percentText').textContent=pct+'%';
+document.getElementById('progressBar').style.width=pct+'%';
+back.style.visibility=step===0?'hidden':'visible';
+next.style.display='block';
+error.style.display='none';
+
+let html=`<div class="tag">EVALUACIÓN GRATUITA</div><h2>${current.title}</h2>${current.description?`<p class="description">${current.description}</p>`:'<p class="description">Completa para continuar.</p>'}`;
+
+if(current.type==='input'){
+html+=`<input id="answer" class="input" type="${current.inputType}" placeholder="${current.placeholder}" value="${data[current.key]||''}">`;
+}
+
+if(current.type==='options'){
+html+=`<div class="options">`;
+current.options.forEach(o=>{
+html+=`<button type="button" class="option ${data[current.key]===o?'selected':''}" data-value="${o}">${o}</button>`;
+});
+html+=`</div>`;
+}
+
+questionArea.innerHTML=html;
+
+document.querySelectorAll('[data-value]').forEach(b=>{
+b.onclick=()=>{
+data[current.key]=b.dataset.value;
+document.querySelectorAll('[data-value]').forEach(x=>x.classList.remove('selected'));
+b.classList.add('selected');
+};
+});
+
+next.textContent=step===list.length-1?'QUIERO MI EVALUACIÓN GRATUITA →':'Continuar →';
+}
+
+function save(){
+const list=visibleQuestions();
+const current=list[step];
+if(current.type==='input'){
+const v=document.getElementById('answer').value.trim();
+if(!v) return false;
+data[current.key]=v;
+}
+if(current.type==='options'){
+if(!data[current.key]) return false;
+}
+return true;
+}
+
+next.onclick=async()=>{
+if(!save()){
+error.innerText='Por favor, completa este paso para continuar.';
+error.style.display='block';
+return;
+}
+
+let list=visibleQuestions();
+const current=list[step];
+
+if(current.key==='phone_confirm'){
+if(phone(data.phone)!==phone(data.phone_confirm)){
+error.innerText='Los números no coinciden. Verifica e intenta de nuevo.';
+error.style.display='block';
+return;
+}
+}
+
+if(current.key==='name'){
+next.disabled=true;next.innerText='Guardando...';
+try{
+await sendLead('lead_capturado');
+if(typeof fbq==='function') fbq('track','Lead');
+customEvent('LeadCapturado');
+}catch(e){
+error.innerText='No pudimos guardar. Intenta de nuevo.';
+error.style.display='block';
+next.disabled=false;next.innerText='Continuar →';
+return;
+}
+next.disabled=false;
+}
+
+list=visibleQuestions();
+const last=step===list.length-1;
+if(!last){step++;render();return;}
+
+next.disabled=true;next.innerText='ENVIANDO...';
+try{
+await sendLead('lead_completo');
+customEvent('LeadCompleto');
+questionArea.style.display='none';
+error.style.display='none';
+back.style.display='none';
+next.style.display='none';
+document.getElementById('done').style.display='block';
+document.getElementById('stepText').textContent='Completado';
+document.getElementById('percentText').textContent='100%';
+document.getElementById('progressBar').style.width='100%';
+}catch(e){
+error.innerText='No pudimos enviar. Intenta de nuevo.';
+error.style.display='block';
+next.disabled=false;
+next.innerText='QUIERO MI EVALUACIÓN GRATUITA →';
+}
+};
+
+back.onclick=()=>{if(step>0){step--;render();}};
+
+</script>
+</body>
+</html>
