@@ -1,0 +1,23 @@
+ARQUITETURA DE LINKS DA IMPUSEG
+
+HOME: index.html
+
+SOLUÇÕES
+- seo-para-empresas-de-seguranca.html
+- sites-para-empresas-de-seguranca.html
+- crm-para-empresas-de-seguranca.html
+- automacao-para-empresas-de-seguranca.html
+
+SEGMENTOS
+- empresas-de-vigilancia.html
+- empresas-de-monitoramento.html
+- empresas-de-portaria.html
+- empresas-de-seguranca-eletronica.html
+
+CONTEÚDOS
+- como-conseguir-clientes-empresa-de-seguranca.html
+- como-conseguir-contratos-de-vigilancia.html
+- como-conseguir-clientes-monitoramento.html
+- como-conseguir-contratos-de-portaria.html
+
+OBS: nesta entrega, somente a HOME está criada. Os links já usam os nomes definitivos das próximas páginas.
