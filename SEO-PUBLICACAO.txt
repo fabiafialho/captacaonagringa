@@ -1,0 +1,8 @@
+SITE FÁBIA FIALHO — PUBLICAÇÃO
+
+Domínio: https://fabiafialho.site
+1. Envie todos os arquivos desta pasta para a raiz do repositório GitHub Pages, incluindo index.html, CNAME, sitemap.xml e robots.txt.
+2. Confirme se https://fabiafialho.site/sitemap.xml e https://fabiafialho.site/robots.txt estão acessíveis.
+3. No Google Search Console, verifique o domínio e envie sitemap.xml.
+4. Teste formulários, links, imagens e visual mobile após a publicação.
+5. Confira as páginas de Belo Horizonte e Rio das Ostras; não afirme possuir escritórios físicos sem comprovação.
